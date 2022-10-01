@@ -1,6 +1,6 @@
 #Set working directory
 #setwd("C:/Users/Administrator/Desktop/predictions")
-setwd("C:/Users/simon/OneDrive/Fussballdaten/predictions")
+setwd("C:/Users/simon/OneDrive/Fussballdaten/Super_League_Predictions")
 
 #Load library
 source("config.R")

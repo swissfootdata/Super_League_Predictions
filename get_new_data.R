@@ -339,7 +339,7 @@ matches_database <- matches_database[order(matches_database$team_home),]
 
 
 #Get odds from Github
-odds_matches <- read.csv("https://raw.githubusercontent.com/awp-finanznachrichten/predictions/master/Output/predictions_upcoming_matches.csv", encoding = "UTF-8")
+odds_matches <- read.csv("https://raw.githubusercontent.com/swissfootdata/UEFA_Rankings/master/Output/predictions_upcoming_matches.csv", encoding = "UTF-8")
 
 if (nrow(matches_database) != 5) {
 
