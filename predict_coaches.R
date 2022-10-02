@@ -53,8 +53,6 @@ coaches$PPS[c] <- PPS/9
 
 }
 
-
-
 #Add new data to predictions
 new_data <- coaches[,c(2:3)]
 colnames(new_data) <- c("Verein","PPS")

@@ -76,7 +76,7 @@ table <- as.data.frame(round(colMeans(season_prognosis)))
 table$teams <- row.names(table)
 
 #Get last predictions
-last_prediction <- read.csv("https://raw.githubusercontent.com/awp-finanznachrichten/predictions/master/Output/predictions_season.csv", encoding = "UTF-8")
+last_prediction <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/predictions_season.csv", encoding = "UTF-8")
 last_prediction <- last_prediction[,1:2]
 
 table_new <- merge(table,last_prediction,by.x="teams",by.y="Team")
@@ -116,7 +116,7 @@ new_entry_prediction <- as.data.frame(spread(trend_prediction,"Team","Final Scor
 new_entry_prediction$date <- Sys.Date()
 
 #Load Data from the past
-old_data_predictions <- read.csv("https://raw.githubusercontent.com/awp-finanznachrichten/predictions/master/Output/trend_predictions.csv",encoding = "UTF-8")
+old_data_predictions <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/trend_predictions.csv",encoding = "UTF-8")
 #colnames(old_data_predictions)[3] <- "FC_Lausanne-Sport"
 old_data_predictions$date <- as.Date(old_data_predictions$date)
 
