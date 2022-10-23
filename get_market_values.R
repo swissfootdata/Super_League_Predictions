@@ -5,8 +5,7 @@ url <- "https://www.transfermarkt.ch/super-league/marktwerteverein/wettbewerb/C1
 webpage <- read_html(url)
 
 data <- html_text(html_nodes(webpage,"td"))
-
-data <- data[-c(1:25)]
+data <- data[-c(1:15)]
 
 
 for (i in seq(1,100,10)) {
