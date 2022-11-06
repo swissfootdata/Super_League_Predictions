@@ -11,12 +11,12 @@ X_season <- X[,-c(1:2)]
 #Get needed data from upcoming matches
 new_games <- upcoming_matches[,c(2:3,12:21)]
 
+# Train the model 
+regr <- randomForest(x = X_season, y = y , maxnodes = 250, ntree = 1100)
+print(regr)
+
 ###Start learning process
 for (a in 1:iterations) {
-
-  # Train the model 
-  regr <- randomForest(x = X_season, y = y , maxnodes = 250, ntree = 1100)
-  print(regr)
 
   #Predict next games
   prediction_next_game <- predict(regr, new_games, type="prob")

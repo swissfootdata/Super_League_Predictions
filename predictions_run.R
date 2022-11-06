@@ -44,7 +44,7 @@ source("get_upcoming_matches.R", encoding = "UTF-8")
 source("predict_next_round.R", encoding= "UTF-8")
 
 #Predict season
-#source("predict_season.R", encoding= "UTF-8")
+source("predict_season.R", encoding= "UTF-8")
 
 #Predict coaches
 source("predict_coaches.R", encoding= "UTF-8")
