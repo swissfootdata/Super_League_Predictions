@@ -1,5 +1,5 @@
 #How many iterations
-iterations <- 1000
+iterations <- 10000
 
 ###Create Data Frame to collect all iterations
 season_prognosis <- data.frame(0,0,0,0,0,0,0,0,0,0)
