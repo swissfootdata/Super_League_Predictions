@@ -60,4 +60,4 @@ source("commit.R", encoding = "UTF-8")
 #} else {
 #print("Keine neuen Daten gefunden")  
 #}  
-  
+  #T
