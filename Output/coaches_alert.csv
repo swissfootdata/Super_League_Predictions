@@ -1,5 +1,4 @@
 "coaches_teams","coaches_names","PPS","alert_level","Games left","prediction","titles"
-"FC Sion","Paolo Tramezzani (FC Sion)",0.855555555555556,9,10.5221410580376,"Will get fired soon!",0
 "FC Basel 1893","Alex Frei (FC Basel 1893)",1.28888888888889,8,26.6808687065356,"Needs a win badly!",12
 "Servette FC","Alain Geiger (Servette FC)",1.12222222222222,7,34.120083601264,"Should start winning soon!",0
 "Grasshopper Club Zürich","Giorgio Contini (Grasshopper Club Zürich)",1,6,39.1074266300453,"Should start to worry...",3
@@ -8,4 +7,5 @@
 "FC St. Gallen 1879","Peter Zeidler (FC St. Gallen 1879)",1.23333333333333,4,53.2871387935143,"Doing just fine",0
 "FC Winterthur","Bruno Berner (FC Winterthur)",1.5,2,65.2416543123715,"Does have nothing to worry about!",0
 "BSC Young Boys","Raphael Wicky (BSC Young Boys)",2.26666666666667,1,71.3254556054156,"Can stay as long as he wants!",4
+"FC Sion","Fabio Celestini (FC Sion)",NA,0,NA,"Too few matches for a prediction",0
 "FC Zürich","Bo Henriksen (FC Zürich)",NA,0,NA,"Too few matches for a prediction",6
