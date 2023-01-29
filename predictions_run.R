@@ -28,7 +28,7 @@ rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 #if (round > rounds_played) {
 
 #Adaptions
-games <- games[1:4]
+#games <- games[1:4]
 #round <- 3
 missing_matches <- c(3841007)
 new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
