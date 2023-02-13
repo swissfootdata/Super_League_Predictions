@@ -46,7 +46,7 @@ gitpull <- function(dir = getwd()){
   shell(cmd)
 }
 
-
+#Test
 #Make Commit
 #token <- read.csv("C:/Users/Administrator/Desktop/Github_Token/token.txt",header=FALSE)[1,1]
 token <- read.csv("C:/Users/simon/OneDrive/Fussballdaten/Github_Token/token.txt",header=FALSE)[1,1]
