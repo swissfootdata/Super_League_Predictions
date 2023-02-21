@@ -29,9 +29,9 @@ rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
 #Adaptions
 #games <- games[1:4]
-#round <- 3
-missing_matches <- c(3841007)
-new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
+#round <- 17
+#missing_matches <- c(3841007)
+#new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
 
 #Scrape recently played matches
 source("get_new_data.R", encoding = "UTF-8")
