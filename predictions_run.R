@@ -14,6 +14,7 @@ source("get_elodata.R", encoding = "UTF-8")
 #Marktwerte laden
 source("get_market_values.R", encoding = "UTF-8")
 
+
 #Coaches laden
 source("get_coaches.R", encoding = "UTF-8")
 
