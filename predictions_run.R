@@ -1,6 +1,6 @@
 #Set working directory
 #setwd("C:/Users/Administrator/Desktop/predictions")
-setwd("C:/Users/sw/OneDrive/Fussballdaten/Super_League_Predictions")
+setwd("C:/Users/simon/OneDrive/Fussballdaten/Super_League_Predictions")
 
 #Load library
 source("config.R")
@@ -26,8 +26,6 @@ source("getting_ids.R", encoding = "UTF-8")
 
 rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
-#if (round > rounds_played) {
-
 #Adaptions
 #games <- games[1:4]
 #round <- 17
@@ -41,10 +39,10 @@ source("get_new_data.R", encoding = "UTF-8")
 source("get_upcoming_matches.R", encoding = "UTF-8")
 
 #Predict next round
-#source("predict_next_round.R", encoding= "UTF-8")
+source("predict_next_round.R", encoding= "UTF-8")
 
 #Predict season
-#source("predict_season.R", encoding= "UTF-8")
+source("predict_season.R", encoding= "UTF-8")
 
 #Predict coaches
 source("predict_coaches.R", encoding= "UTF-8")
@@ -57,8 +55,3 @@ cat(round,file="rounds_played.txt")
 
 #Make Commit
 source("commit.R", encoding = "UTF-8")
-
-#} else {
-#print("Keine neuen Daten gefunden")  
-#}  
-  #T
