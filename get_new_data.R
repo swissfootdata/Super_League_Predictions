@@ -106,7 +106,6 @@ for (i in games) {
 }
 
 
-
 data_transfermarkt_new <- data_transfermarkt_new[-1,]
 data_transfermarkt_new$date <- as.Date(data_transfermarkt_new$date,format="%d.%m.%Y")
 data_transfermarkt_new$goals_home <- NA
@@ -177,7 +176,6 @@ for (y in 1:nrow(data_transfermarkt_new)) {
   
   
 }
-
 
 #Form 1 Monat, 3 Monate, 6 Monate, Jahr, insgesamt
 data_transfermarkt_new$month_performance_home <- NA
@@ -337,7 +335,6 @@ matches_database <- matches_database[matches_database$season == season &
 
 matches_database <- matches_database[order(matches_database$team_home),]
 
-
 #Get odds from Github
 odds_matches <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/predictions_upcoming_matches.csv", encoding = "UTF-8")
 
@@ -349,6 +346,7 @@ print("Achtung! Nicht genügend Spiele gefunden für Synchronisation mit Odds. B
       
 }  
 
+View(odds_matches)
 
 #Auf Datenbank zugreifen
 mydb <- dbConnect(MySQL(), user='Administrator', password='tqYYDcqx43', dbname='football_data', host='33796.hostserv.eu', encoding="utf8")
