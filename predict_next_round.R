@@ -108,6 +108,7 @@ for (i in 1:nrow(predictions_next_game)) {
   
 }
 
+
 predictions_robot <- predictions_next_game[,c(1,5)]
 print(predictions_robot)
 
