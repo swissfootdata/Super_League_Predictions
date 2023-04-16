@@ -346,8 +346,6 @@ print("Achtung! Nicht genügend Spiele gefunden für Synchronisation mit Odds. B
       
 }  
 
-View(odds_matches)
-
 #Auf Datenbank zugreifen
 mydb <- dbConnect(MySQL(), user='Administrator', password='tqYYDcqx43', dbname='football_data', host='33796.hostserv.eu', encoding="utf8")
 
