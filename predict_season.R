@@ -128,7 +128,7 @@ write.csv(trend_prediction,file="Output/trend_predictions.csv", row.names=FALSE,
 
 print(trend_prediction)
 #Rankings probabilities
-data_rankings <- as.data.frame(t(apply(-season_prognosis, 1, rank, ties.method='min')))
+data_rankings <- as.data.frame(t(apply(-season_prognosis, 1, rank, ties.method='random')))
 
 table_rankings <- data.frame("team",0,0,0,0,0,0,0,0,0,0)
 colnames(table_rankings) <- c("team","champion","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth")
