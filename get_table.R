@@ -2,7 +2,7 @@
 #Tabellendaten laden
 url <- paste0("https://www.transfermarkt.ch/super-league/spieltagtabelle/wettbewerb/C1?saison_id=2022")
 webpage <- read_html(url)
-url
+
 data_tabelle <- html_text(html_nodes(webpage,"td"))
 data_tabelle <- data_tabelle[50:length(data_tabelle)]
 tabelle <- data.frame("team",0,0)
