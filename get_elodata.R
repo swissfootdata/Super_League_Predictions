@@ -1,9 +1,9 @@
 get_elodata <- function() {
 
 
-teams <- c("YoungBoys","Basel","StGallen","Servette","Luzern","Zuerich","Lugano","Sion","Winterthur","Grasshoppers")
+teams <- c("YoungBoys","Basel","StGallen","Servette","Luzern","Zuerich","Lugano","Lausanne","Winterthur","Grasshoppers")
 
-elo_values <- data.frame("None","bla","SUI",0,0,1901-01-01,1901-01-01)
+elo_values <- data.frame("None","bla","SUI",0,0,Sys.Date(),Sys.Date())
 colnames(elo_values) <- c("Rank","Club","Country","Level","Elo","From","To")
 
 
@@ -26,6 +26,7 @@ return(elo_values)
 
 }
 
+
 elo_values <- get_elodata()
 
 elo_values$Club <- gsub("Aarau","FC Aarau",elo_values$Club)
@@ -43,5 +44,6 @@ elo_values$Club <- gsub("Xamax","Neuchâtel Xamax FCS",elo_values$Club)
 elo_values$Club <- gsub("Young Boys","BSC Young Boys",elo_values$Club)
 elo_values$Club <- gsub("Zuerich","FC Zürich",elo_values$Club)
 elo_values$Club <- gsub("Winterthur","FC Winterthur",elo_values$Club)
+
 
      

@@ -1,4 +1,4 @@
-url <- "https://www.transfermarkt.ch/super-league/gesamtspielplan/wettbewerb/C1/saison_id/2022"
+url <- "https://www.transfermarkt.ch/super-league/gesamtspielplan/wettbewerb/C1/saison_id/2023"
 webpage <- read_html(url)
 
 ids_id <- webpage %>%

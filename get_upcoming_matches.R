@@ -26,11 +26,11 @@ for (i in new_matches) {
   
   team_home <- html_text(html_nodes(webpage,".sb-vereinslink"))[1]
   team_away <- html_text(html_nodes(webpage,".sb-vereinslink"))[2]
-  team_home <- gsub("FC Lausanne-Sport","FC Winterthur",team_home)
-  team_away <- gsub("FC Lausanne-Sport","FC Winterthur",team_away)
+  #team_home <- gsub("FC Lausanne-Sport","FC Winterthur",team_home)
+  #team_away <- gsub("FC Lausanne-Sport","FC Winterthur",team_away)
   team_home_ranking <- which(tabelle$team == team_home)
   team_away_ranking <- which(tabelle$team == team_away)
-
+  
   spieltag <- parse_number(html_text(html_nodes(webpage,".sb-datum"))[1])
   datum <- gsub( ".*(\\d{2}.\\d{2}.\\d{2}).*", "\\1", html_text(html_nodes(webpage,".sb-datum"))[1])
   datum <- gsub("[.]22",".2022",datum)
@@ -64,7 +64,7 @@ upcoming_matches$date <- as.Date(upcoming_matches$date,format="%d.%m.%Y")
 
 for (i in 1:nrow(upcoming_matches)) {
   
-  if (upcoming_matches$team_home_ranking[i] > 10) {
+  if (upcoming_matches$team_home_ranking[i] > 12) {
      upcoming_matches$team_home_ranking[i] <- NA
     
    } 

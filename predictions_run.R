@@ -6,7 +6,7 @@ setwd("C:/Users/simon/OneDrive/Fussballdaten/Super_League_Predictions")
 source("config.R")
 
 #Season
-season <- "22/23"
+season <- "23/24"
 
 #Get Elo-Daten
 source("get_elodata.R", encoding = "UTF-8")
@@ -32,6 +32,7 @@ rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 #missing_matches <- c(3841007)
 #new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
 
+
 #Scrape recently played matches
 source("get_new_data.R", encoding = "UTF-8")
 
@@ -55,3 +56,4 @@ cat(round,file="rounds_played.txt")
 
 #Make Commit
 source("commit.R", encoding = "UTF-8")
+
