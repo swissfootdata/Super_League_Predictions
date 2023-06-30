@@ -101,8 +101,6 @@ season_prognosis <- season_prognosis[-1,]
 table <- as.data.frame(round(colMeans(season_prognosis))) 
 table$teams <- row.names(table)
 
-colnames(last_prediction) <- c("Final.Score","Team")
-
 #Get last predictions
 last_prediction <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/predictions_season.csv", encoding = "UTF-8")
 last_prediction <- last_prediction[,1:2]
@@ -144,7 +142,8 @@ new_entry_prediction$date <- Sys.Date()
 
 #Load Data from the past
 old_data_predictions <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/trend_predictions.csv",encoding = "UTF-8")
-#colnames(old_data_predictions)[3] <- "FC_Lausanne-Sport"
+colnames(old_data_predictions)[3] <- "FC_Lausanne-Sport"
+colnames(old_data_predictions)[7] <- "FC_Stade-Lausanne-Ouchy"
 old_data_predictions$date <- as.Date(old_data_predictions$date)
 
 #Add Data
