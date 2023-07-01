@@ -44,6 +44,4 @@ elo_values$Club <- gsub("Xamax","Neuchâtel Xamax FCS",elo_values$Club)
 elo_values$Club <- gsub("Young Boys","BSC Young Boys",elo_values$Club)
 elo_values$Club <- gsub("Zuerich","FC Zürich",elo_values$Club)
 elo_values$Club <- gsub("Winterthur","FC Winterthur",elo_values$Club)
-
-
      

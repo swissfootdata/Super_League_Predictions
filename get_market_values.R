@@ -8,7 +8,7 @@ data <- html_text(html_nodes(webpage,"td"))
 data <- data[-c(1:15)]
 
 
-for (i in seq(1,100,10)) {
+for (i in seq(1,120,10)) {
 
 club <- data[i]
 value <- data[i+4]
@@ -29,7 +29,7 @@ market_values$players <- as.numeric(as.character(market_values$players))
 market_values$average <- market_values$value/market_values$players
 
 market_values <- market_values[order(-market_values$value),]
-market_values$ranking <- 1:10
+market_values$ranking <- 1:12
 
 market_values <- market_values[,-4]
 market_values$season <- as.character(market_values$season)

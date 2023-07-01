@@ -207,7 +207,7 @@ upcoming_matches$elo_away <- NA
 for (y in 1:nrow(upcoming_matches)) {
   
   date <- upcoming_matches$date[y]-1
-  
+
   elo_home <- elo_values[elo_values$Club == upcoming_matches$team_home[y],]
   elo_home <- elo_home[elo_home$To <= date,5]
   upcoming_matches$elo_home[y] <- elo_home[length(elo_home)]

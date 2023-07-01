@@ -20,7 +20,8 @@ market_values$ranking[12] <- 12
 
 tabelle <- tabelle[c(8,2,11,7,1,4,9,5,3,6,10,12),]
 
-for (i in 1:2) {
+
+for (i in 1:3) {
 elo_values <- rbind(elo_values,elo_values[nrow(elo_values),])
 }
 
