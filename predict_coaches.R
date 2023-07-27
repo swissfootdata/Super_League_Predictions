@@ -70,6 +70,7 @@ coaches_old <- coaches_old %>%
   group_by(Verein) %>%
   summarise(titles = sum(Meisterschaften))
 
+
 coaches <- merge(coaches,coaches_old,by.x="coaches_teams",by.y = "Verein")
 coaches$`Games left` <- coaches$`Games left`-coaches$titles
 
@@ -136,6 +137,4 @@ coaches <- coaches[order(-coaches$alert_level,coaches$`Games left`),]
 coaches$coaches_names <- paste0(coaches$coaches_names," (",coaches$coaches_teams,")")
 
 write.csv(coaches,file="./Output/coaches_alert.csv",row.names = FALSE, fileEncoding="UTF-8")
-
 print(coaches)
-

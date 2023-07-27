@@ -1,11 +1,13 @@
 "coaches_teams","coaches_names","PPS","alert_level","Games left","prediction","titles"
-"FC Sion","Paolo Tramezzani (FC Sion)",0.177777777777778,10,-13.4838992888352,"Is doomed no matter what!!!",0
-"FC Basel 1893","Heiko Vogel (FC Basel 1893)",1.37777777777778,8,29.8292018668001,"Needs a win badly!",12
-"FC Winterthur","Bruno Berner (FC Winterthur)",0.533333333333333,7,31.0035311945408,"Should start winning soon!",0
-"Grasshopper Club Zürich","Giorgio Contini (Grasshopper Club Zürich)",1.01111111111111,6,39.5009682750785,"Should start to worry...",3
-"FC St. Gallen 1879","Peter Zeidler (FC St. Gallen 1879)",1.21111111111111,4,52.5000555034473,"Doing just fine",0
-"FC Luzern","Mario Frick (FC Luzern)",1.37777777777778,3,55.5939788541098,"Should keep his job a while",0
-"BSC Young Boys","Raphael Wicky (BSC Young Boys)",1.92222222222222,3,59.1256646092133,"Should keep his job a while",4
-"FC Zürich","Bo Henriksen (FC Zürich)",1.62222222222222,3,59.8032234326484,"Should keep his job a while",6
-"FC Lugano","Mattia Croci-Torti (FC Lugano)",2.37777777777778,1,70.1944412899657,"Can stay as long as he wants!",0
-"Servette FC","Alain Geiger (Servette FC)",2.14444444444444,1,70.3259149444509,"Can stay as long as he wants!",0
+"FC Luzern","Mario Frick (FC Luzern)",1.21111111111111,4,49.6571022220953,"Doing just fine",0
+"FC St. Gallen 1879","Peter Zeidler (FC St. Gallen 1879)",1.57777777777778,2,67.6415219112191,"Does have nothing to worry about!",0
+"BSC Young Boys","Raphael Wicky (BSC Young Boys)",2.14444444444444,2,69.4942699926924,"Does have nothing to worry about!",4
+"FC Zürich","Bo Henriksen (FC Zürich)",1.93333333333333,1,73.7608661395052,"Can stay as long as he wants!",6
+"FC Lugano","Mattia Croci-Torti (FC Lugano)",2.37777777777778,1,76.2782512475622,"Can stay as long as he wants!",0
+"FC Basel 1893","Timo Schultz (FC Basel 1893)",NA,0,NA,"Too few matches for a prediction",12
+"FC Lausanne-Sport","Ludovic Magnin (FC Lausanne-Sport)",NA,0,NA,"Too few matches for a prediction",0
+"FC Stade-Lausanne-Ouchy","Anthony Braizat (FC Stade-Lausanne-Ouchy)",NA,0,NA,"Too few matches for a prediction",0
+"FC Winterthur","Patrick Rahmen (FC Winterthur)",NA,0,NA,"Too few matches for a prediction",0
+"Grasshopper Club Zürich","Bruno Berner (Grasshopper Club Zürich)",NA,0,NA,"Too few matches for a prediction",3
+"Servette FC","René Weiler (Servette FC)",NA,0,NA,"Too few matches for a prediction",0
+"Yverdon Sport FC","Marco Schällibaum (Yverdon Sport FC)",NA,0,NA,"Too few matches for a prediction",0

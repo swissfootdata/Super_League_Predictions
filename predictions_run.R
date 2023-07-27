@@ -14,7 +14,6 @@ source("get_elodata.R", encoding = "UTF-8")
 #Marktwerte laden
 source("get_market_values.R", encoding = "UTF-8")
 
-
 #Coaches laden
 source("get_coaches.R", encoding = "UTF-8")
 
@@ -32,7 +31,6 @@ rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 #missing_matches <- c(3841007)
 #new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
 
-
 #Scrape recently played matches
 source("get_new_data.R", encoding = "UTF-8")
 
@@ -49,7 +47,7 @@ source("predict_season.R", encoding= "UTF-8")
 source("predict_coaches.R", encoding= "UTF-8")
 
 ###Beat the robot 3.0
-source("beat_the_robot_3.R", encoding = "UTF-8")
+#source("beat_the_robot_3.R", encoding = "UTF-8")
 
 #Store played rounds
 cat(round,file="rounds_played.txt")

@@ -338,7 +338,7 @@ matches_database <- matches_database[order(matches_database$team_home),]
 #Get odds from Github
 odds_matches <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/predictions_upcoming_matches.csv", encoding = "UTF-8")
 
-if (nrow(matches_database) != 5) {
+if (nrow(matches_database) != 6) {
 
 odds_matches <- odds_matches[1:nrow(matches_database),]  
 
