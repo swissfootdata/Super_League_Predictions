@@ -10,13 +10,13 @@ ids$check <- grepl("spielbericht",ids$ids_id)
 
 ids <- na.omit(ids[ids$check == TRUE,])
 
-new_matches <- as.integer(gsub(".*spielbericht/", "",ids$ids_id))
+new_matches_all <- as.integer(gsub(".*spielbericht/", "",ids$ids_id))
 
-played_matches <- (as.numeric(round))*5
+played_matches <- (as.numeric(round))*6
 
-games <- new_matches[(played_matches-4):played_matches]
+games <- new_matches_all[(played_matches-5):played_matches]
 
-new_matches <- new_matches[(played_matches+1):length(new_matches)]
+new_matches <- new_matches_all[(played_matches+1):length(new_matches_all)]
 
 print(paste0(length(new_matches)," matches found"))
 

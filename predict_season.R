@@ -16,7 +16,7 @@ print(regr)
 for (a in 1:iterations) {
   
   #Get needed data from upcoming matches
-  new_games <- upcoming_matches[,c(2:3,12:21)]
+  new_games <- upcoming_matches_all[,c(2:3,12:21)]
 
   ##Adapt schedule
   #Switch home and away every 2nd iteration
@@ -41,9 +41,11 @@ for (a in 1:iterations) {
   selected_matches <- new_games[l:(l+5),]
   new_games <- rbind(new_games,selected_matches)
   }
-  
   }  
   
+  #Remove already played matches
+  new_games <- new_games[-c(1:(nrow(upcoming_matches_all)-nrow(upcoming_matches))),]
+
   #Predict next games
   prediction_next_game <- predict(regr, new_games, type="prob")
   
@@ -72,20 +74,20 @@ for (a in 1:iterations) {
   scores_new$score <- scores_new$x.x + scores_new$x.y
 
   #Get scores so far
-  #current_season <- data_transfermarkt[data_transfermarkt$season == season,]
-  #current_season <- current_season[!is.na(current_season$points_home),]
+  current_season <- data_transfermarkt[data_transfermarkt$season == season,]
+  current_season <- current_season[!is.na(current_season$points_home),]
 
-  #scores_home <- aggregate(current_season$points_home,by=list(current_season$team_home),FUN=sum)
-  #scores_away <- aggregate(current_season$points_away,by=list(current_season$team_away),FUN=sum)
+  scores_home <- aggregate(current_season$points_home,by=list(current_season$team_home),FUN=sum)
+  scores_away <- aggregate(current_season$points_away,by=list(current_season$team_away),FUN=sum)
 
-  #scores_season <- merge(scores_home,scores_away,by="Group.1")
-  #scores_season$score <- scores_season$x.x + scores_season$x.y
+  scores_season <- merge(scores_home,scores_away,by="Group.1")
+  scores_season$score <- scores_season$x.x + scores_season$x.y
   
   #Merge to final score
-  #scores_overall <- merge(scores_new,scores_season,by="Group.1")
-  #scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
-  scores_overall <- scores_new
-  scores_overall$final_score <- scores_new$score
+  scores_overall <- merge(scores_new,scores_season,by="Group.1")
+  scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
+  #scores_overall <- scores_new
+  #scores_overall$final_score <- scores_new$score
   
   #Write final score in new data frame
   season_prognosis <- rbind(season_prognosis,scores_overall$final_score)

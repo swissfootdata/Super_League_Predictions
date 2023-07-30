@@ -112,3 +112,4 @@ predictions_robot <- predictions_next_game[,c(1,5)]
 print(predictions_robot)
 
 write.csv(predictions_robot,file="Output/predictions_SwissFootyBot.csv",row.names = FALSE, fileEncoding = "UTF-8")
+

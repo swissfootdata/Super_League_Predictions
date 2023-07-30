@@ -19,7 +19,7 @@ upcoming_matches <- data.frame("team_home","team_away",0,0,1,"01.01.1900","99:99
 colnames(upcoming_matches) <- c("team_home","team_away","team_home_ranking","team_away_ranking",
                                 "round","date","time","referee")
 
-for (i in new_matches) {
+for (i in new_matches_all) {
   
   url <- paste0("https://www.transfermarkt.ch/fc-sion_fc-basel-1893/statistik/spielbericht/",i)
   webpage <- read_html(url)
@@ -57,7 +57,6 @@ for (i in new_matches) {
 }
 
 #Write in dataframe
-
 upcoming_matches <- upcoming_matches[-1,]
 upcoming_matches$date <- as.Date(upcoming_matches$date,format="%d.%m.%Y")
 
@@ -91,21 +90,12 @@ for (i in 1:nrow(upcoming_matches)) {
     
     selection <- selection[!is.na(selection$team_away_ranking),]
     selection <- selection[nrow(selection),]
-    
     if (selection$team_away == upcoming_matches$team_away[i]) {
-      
       upcoming_matches$team_away_ranking[i] <- selection$team_away_ranking 
-      
-      
     } else {
-      
-      upcoming_matches$team_away_ranking[i] <- selection$team_home_ranking
-      
+    upcoming_matches$team_away_ranking[i] <- selection$team_home_ranking
     } 
-    
   }
-  
-  
 }
 
 
@@ -189,13 +179,12 @@ for (i in (nrow(all_matches)-length(new_matches)):nrow(all_matches)) {
   
 }
 
-
 #Replace NAs
 for(i in 1:ncol(all_matches)){
   all_matches[is.na(all_matches[,i]), i] <- mean(all_matches[,i], na.rm = TRUE)
 }
 
-upcoming_matches <- all_matches[(nrow(all_matches)-length(new_matches)+1):nrow(all_matches),]
+upcoming_matches <- all_matches[(nrow(all_matches)-length(new_matches_all)+1):nrow(all_matches),]
 
 upcoming_matches$points_home <- NA
 upcoming_matches$points_away <- NA
@@ -243,4 +232,9 @@ upcoming_matches$threeyear_performance_home <- as.numeric(upcoming_matches$three
 upcoming_matches$threeyear_performance_away <- as.numeric(upcoming_matches$threeyear_performance_away)
 upcoming_matches <- upcoming_matches[order(upcoming_matches$date),]
 
+upcoming_matches_all <- upcoming_matches
+upcoming_matches <- upcoming_matches_all %>%
+  filter(round > round)
+  
 print("data for upcoming matches gathered")
+
