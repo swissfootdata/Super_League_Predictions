@@ -56,7 +56,6 @@ matches <- paste0(next_round$team_home,"-",next_round$team_away)
 new_games <- next_round[,c(4:5,12:21)]
 
 # Train the model 
-
 for (i in 1:20) {
 regr <- randomForest(x = X, y = y, maxnodes = 250, ntree = 1100, type="prob")
 #Predict next games

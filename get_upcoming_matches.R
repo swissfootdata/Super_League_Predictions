@@ -233,8 +233,9 @@ upcoming_matches$threeyear_performance_away <- as.numeric(upcoming_matches$three
 upcoming_matches <- upcoming_matches[order(upcoming_matches$date),]
 
 upcoming_matches_all <- upcoming_matches
+rounds_filter <- round
 upcoming_matches <- upcoming_matches_all %>%
-  filter(round > round)
-  
+  filter(round > rounds_filter)
+
 print("data for upcoming matches gathered")
 

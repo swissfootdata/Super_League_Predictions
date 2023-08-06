@@ -1,6 +1,17 @@
 #How many iterations
 iterations <- 10000
 
+#Get scores so far
+current_season <- data_transfermarkt[data_transfermarkt$season == season,]
+current_season <- current_season[!is.na(current_season$points_home),]
+
+scores_home <- aggregate(current_season$points_home,by=list(current_season$team_home),FUN=sum)
+scores_away <- aggregate(current_season$points_away,by=list(current_season$team_away),FUN=sum)
+
+#Add scores so far
+scores_season <- merge(scores_home,scores_away,by="Group.1")
+scores_season$score <- scores_season$x.x + scores_season$x.y
+
 ###Create Data Frame to collect all iterations
 season_prognosis <- data.frame(0,0,0,0,0,0,0,0,0,0,0,0)
 colnames(season_prognosis) <- c("BSC Young Boys","FC Basel 1893","FC Lausanne-Sport","FC Lugano","FC Luzern","FC St. Gallen 1879","FC Stade-Lausanne-Ouchy","FC Winterthur","FC Zürich","Grasshopper Club Zürich","Servette FC","Yverdon Sport FC")
@@ -12,12 +23,13 @@ X_season <- X[,-c(1:2)]
 regr <- randomForest(x = X_season, y = y , maxnodes = 250, ntree = 1100)
 print(regr)
 
+
 ###Start learning process
 for (a in 1:iterations) {
-  
-  #Get needed data from upcoming matches
-  new_games <- upcoming_matches_all[,c(2:3,12:21)]
 
+#Get needed data from upcoming matches
+new_games <- upcoming_matches_all[,c(2:3,12:21)]
+  
   ##Adapt schedule
   #Switch home and away every 2nd iteration
   if (a %% 2 == 0) {
@@ -73,17 +85,7 @@ for (a in 1:iterations) {
   scores_new <- merge(scores_home,scores_away,by="Group.1")
   scores_new$score <- scores_new$x.x + scores_new$x.y
 
-  #Get scores so far
-  current_season <- data_transfermarkt[data_transfermarkt$season == season,]
-  current_season <- current_season[!is.na(current_season$points_home),]
-
-  scores_home <- aggregate(current_season$points_home,by=list(current_season$team_home),FUN=sum)
-  scores_away <- aggregate(current_season$points_away,by=list(current_season$team_away),FUN=sum)
-
-  scores_season <- merge(scores_home,scores_away,by="Group.1")
-  scores_season$score <- scores_season$x.x + scores_season$x.y
-  
-  #Merge to final score
+  #Merge to final score by adding scores so far
   scores_overall <- merge(scores_new,scores_season,by="Group.1")
   scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
   #scores_overall <- scores_new
@@ -95,7 +97,6 @@ for (a in 1:iterations) {
   print(nrow(season_prognosis))
   print(scores_overall$final_score)
 }
-
 
 season_prognosis <- season_prognosis[-1,]
 
