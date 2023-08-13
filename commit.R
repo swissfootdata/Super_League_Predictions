@@ -74,12 +74,6 @@ dw_publish_chart("tjzgp")
 dw_edit_chart("qPB42",annotate = paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
 dw_publish_chart("qPB42")
 
-dw_edit_chart("8mcqz",annotate = paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
-dw_publish_chart("8mcqz")
-
-dw_edit_chart("tUS3l",intro=paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
-dw_publish_chart("tUS3l")
-
 dw_edit_chart("VF9j6",intro=paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
 dw_publish_chart("VF9j6")
 
