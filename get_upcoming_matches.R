@@ -237,5 +237,12 @@ rounds_filter <- round
 upcoming_matches <- upcoming_matches_all %>%
   filter(round > rounds_filter)
 
+#Add missing matches
+if (length(position_missing_matches)>0) {
+for (m in position_missing_matches) {
+upcoming_matches <- rbind(upcoming_matches,upcoming_matches_all[m,])  
+}  
+}
+
 print("data for upcoming matches gathered")
 

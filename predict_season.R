@@ -29,7 +29,7 @@ for (a in 1:iterations) {
 
 #Get needed data from upcoming matches
 new_games <- upcoming_matches_all[,c(2:3,12:21)]
-  
+
   ##Adapt schedule
   #Switch home and away every 2nd iteration
   if (a %% 2 == 0) {
@@ -54,7 +54,15 @@ new_games <- upcoming_matches_all[,c(2:3,12:21)]
   new_games <- rbind(new_games,selected_matches)
   }
   }  
-  
+
+#Shift missing matches
+if (length(position_missing_matches)>0) {
+  for (m in position_missing_matches) {
+    new_games <- rbind(new_games,new_games[m,])
+  }
+  new_games <- new_games[-c(position_missing_matches),]
+}
+
   #Remove already played matches
   new_games <- new_games[-c(1:(nrow(upcoming_matches_all)-nrow(upcoming_matches))),]
 
