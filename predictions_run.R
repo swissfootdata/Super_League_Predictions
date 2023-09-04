@@ -26,7 +26,7 @@ source("getting_ids.R", encoding = "UTF-8")
 rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
 #Adaptions
-games <- c(4089717,4089718,4089721,4089722)
+#games <- c(4089717,4089718,4089721,4089722)
 #round <- 1
 missing_matches <- c(4089719,4089720)
 position_missing_matches <- c(26,28)
@@ -46,9 +46,6 @@ source("predict_season.R", encoding= "UTF-8")
 
 #Predict coaches
 source("predict_coaches.R", encoding= "UTF-8")
-
-###Beat the robot 3.0
-#source("beat_the_robot_3.R", encoding = "UTF-8")
 
 #Store played rounds
 cat(round,file="rounds_played.txt")
