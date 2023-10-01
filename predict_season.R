@@ -200,5 +200,7 @@ write.csv(table_rankings,file="Output/probabilities_predictions.csv", row.names=
 
 print(table_rankings)
 
+table_rankings <- table_rankings %>%
+    mutate(odds_top_6 = `1st`+`2nd`+`3rd`+`4th`+`5th`+`6th`)
 
-
+View(table_rankings)
