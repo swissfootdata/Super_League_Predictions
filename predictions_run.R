@@ -26,8 +26,8 @@ source("getting_ids.R", encoding = "UTF-8")
 rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
 #Adaptions
-#games <- c(4089717,4089718,4089721,4089722)
-#round <- 1
+#games <- c(4089765:4089770)
+#round <- 13
 missing_matches <- c(4089719,4089720)
 position_missing_matches <- c(26,28)
 new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
