@@ -49,7 +49,7 @@ gitpull <- function(dir = getwd()){
 
 #Make Commit
 #token <- read.csv("C:/Users/Administrator/Desktop/Github_Token/token.txt",header=FALSE)[1,1]
-token <- read.csv("C:/Users/simon/OneDrive/Fussballdaten/Github_Token/token.txt",header=FALSE)[1,1]
+token <- read.csv("C:/Users/sw/OneDrive/Fussballdaten/Github_Token/token.txt",header=FALSE)[1,1]
 
 git2r::config(user.name = "swissfootdata",user.email = "swissfootballdata@bluewin.ch")
 invisible(git2r::cred_token(token))
@@ -76,6 +76,3 @@ dw_publish_chart("qPB42")
 
 dw_edit_chart("VF9j6",intro=paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
 dw_publish_chart("VF9j6")
-
-
-
