@@ -1,6 +1,6 @@
 #Set working directory
 #setwd("C:/Users/Administrator/Desktop/predictions")
-setwd("C:/Users/sw/OneDrive/Fussballdaten/Super_League_Predictions")
+setwd("C:/Users/simon/OneDrive/Fussballdaten/Super_League_Predictions")
 
 #Load library
 source("config.R")
@@ -42,7 +42,7 @@ source("get_upcoming_matches.R", encoding = "UTF-8")
 source("predict_next_round.R", encoding= "UTF-8")
 
 #Predict season
-source("predict_season_after_winter.R", encoding= "UTF-8")
+source("predict_season_last_stage.R", encoding= "UTF-8")
 
 #Predict coaches
 source("predict_coaches.R", encoding= "UTF-8")
