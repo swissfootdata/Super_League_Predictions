@@ -14,7 +14,7 @@ scores_season$score <- scores_season$x.x + scores_season$x.y
 
 ###Create Data Frame to collect all iterations
 season_prognosis <- data.frame(0,0,0,0,0,0,0,0,0,0,0,0)
-colnames(season_prognosis) <- c("BSC Young Boys","FC Basel 1893","FC Lausanne-Sport","FC Lugano","FC Luzern","FC St. Gallen 1879","FC Stade-Lausanne-Ouchy","FC Winterthur","FC Zürich","Grasshopper Club Zürich","Servette FC","Yverdon Sport FC")
+colnames(season_prognosis) <- c("BSC Young Boys","FC Basel 1893","FC Lausanne-Sport","FC Lugano","FC Luzern","FC Sion","FC St. Gallen 1879","FC Winterthur","FC Zürich","Grasshopper Club Zürich","Servette FC","Yverdon Sport FC")
 
 #Remove rankings
 X_season <- X[,-c(1:2)]
@@ -94,10 +94,10 @@ if (length(position_missing_matches)>0) {
   scores_new$score <- scores_new$x.x + scores_new$x.y
 
   #Merge to final score by adding scores so far
-  scores_overall <- merge(scores_new,scores_season,by="Group.1")
-  scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
-  #scores_overall <- scores_new
-  #scores_overall$final_score <- scores_new$score
+  #scores_overall <- merge(scores_new,scores_season,by="Group.1")
+  #scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
+  scores_overall <- scores_new
+  scores_overall$final_score <- scores_new$score
   
   #Write final score in new data frame
   season_prognosis <- rbind(season_prognosis,scores_overall$final_score)

@@ -1,12 +1,12 @@
 #Set working directory
 #setwd("C:/Users/Administrator/Desktop/predictions")
-setwd("C:/Users/sw/OneDrive/Fussballdaten/Super_League_Predictions")
+setwd("C:/Users/simon/OneDrive/Fussballdaten/Super_League_Predictions")
 
 #Load library
 source("config.R")
 
 #Season
-season <- "23/24"
+season <- "24/25"
 
 #Get Elo-Daten
 source("get_elodata.R", encoding = "UTF-8")
@@ -26,8 +26,8 @@ source("getting_ids.R", encoding = "UTF-8")
 rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
 #Adaptions
-#games <- c(4089787)
-#round <- 16
+#games <- c(4331734:4331739)
+#round <- 0
 missing_matches <- c()
 position_missing_matches <- c()
 #new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
@@ -42,7 +42,7 @@ source("get_upcoming_matches.R", encoding = "UTF-8")
 source("predict_next_round.R", encoding= "UTF-8")
 
 #Predict season
-source("predict_season_last_stage.R", encoding= "UTF-8")
+source("predict_season.R", encoding= "UTF-8")
 
 #Predict coaches
 source("predict_coaches.R", encoding= "UTF-8")

@@ -37,8 +37,12 @@ for (i in new_matches_all) {
   #datum <- gsub("[.]21",".2022",datum) 
   datum <- gsub("[.]23",".2023",datum)
   datum <- gsub("[.]24",".2024",datum)
+  datum <- gsub("[.]25",".2025",datum)
+  datum <- gsub("[.]26",".2026",datum)
+  datum <- gsub("[.]27",".2027",datum)
+  datum <- gsub("[.]28",".2028",datum)
   zeit <- gsub( ".*(\\d{2}:\\d{2}).*", "\\1", html_text(html_nodes(webpage,".sb-datum"))[1])
-  
+
   schiedsrichter <- str_split(html_text(html_nodes(webpage,".sb-zusatzinfos")),"Schiedsrichter:")[[1]][2]
   schiedsrichter <- trimws(gsub("\t","",schiedsrichter))
   
@@ -208,7 +212,7 @@ for (y in 1:nrow(upcoming_matches)) {
   
   
 }
-
+upcoming_matches$team_home[y]
 #Add average market value
 #season
 upcoming_matches$season <- season

@@ -3,7 +3,7 @@ webpage <- read_html(url)
 
 coaches_data <- html_text(html_nodes(webpage,"a"))
 
-coaches_data
+
 start <- which(grepl("PPS",coaches_data))[1]
 
 coaches_data <- coaches_data[start:length(coaches_data)]
@@ -22,4 +22,7 @@ coaches <- data.frame(coaches_names,coaches_teams)
 coaches$PPS <- NA
 coaches$alert_level <- 0
 
-print(coaches)
+#coaches <- coaches %>%
+#  add_row(coaches_names = "Ricardo Dionísio",
+#          coaches_teams = "FC Stade-Lausanne-Ouchy")
+

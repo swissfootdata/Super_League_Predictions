@@ -1,4 +1,4 @@
-url <- "https://www.transfermarkt.ch/super-league/gesamtspielplan/wettbewerb/C1/saison_id/2023"
+url <- "https://www.transfermarkt.ch/super-league/gesamtspielplan/wettbewerb/C1/saison_id/2024"
 webpage <- read_html(url)
 
 ids_id <- webpage %>%
@@ -19,4 +19,3 @@ games <- new_matches_all[(played_matches-5):played_matches]
 new_matches <- new_matches_all[(played_matches+1):length(new_matches_all)]
 
 print(paste0(length(new_matches)," matches found"))
-

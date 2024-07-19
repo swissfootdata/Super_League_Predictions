@@ -42,9 +42,11 @@ tabelle$team[which(grepl("Lausanne[-]Sport",tabelle$team))] <- "FC Lausanne-Spor
 round <- max(tabelle$matches)
 print(paste0("Played rounds: ",round))
 
+#tabelle <- tabelle %>%
+#  add_row(team = "FC Sion")
 ###Tabelle vom letzten Spieltag
 #Tabellendaten laden
-url <- paste0("https://www.transfermarkt.ch/super-league/spieltagtabelle/wettbewerb/C1?saison_id=2023&spieltag=",as.numeric(round)-1)
+url <- paste0("https://www.transfermarkt.ch/super-league/spieltagtabelle/wettbewerb/C1?saison_id=2024&spieltag=",as.numeric(round)-1)
 webpage <- read_html(url)
 
 

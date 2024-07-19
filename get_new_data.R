@@ -199,7 +199,6 @@ data_transfermarkt_new$odds_away_win <- NA
 #Merge mit bereits vorhandenen Daten
 matches_database <- rbind(matches_database,data_transfermarkt_new) 
 
-
 #Formdaten hinzufügen
 for (i in (nrow(matches_database)-length(games)):nrow(matches_database)) {
   
