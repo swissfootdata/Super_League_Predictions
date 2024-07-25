@@ -1,6 +1,6 @@
 ###Aktuelle Tabelle
 #Tabellendaten laden
-url <- paste0("https://www.transfermarkt.ch/super-league/spieltagtabelle/wettbewerb/C1?saison_id=2023")
+url <- paste0("https://www.transfermarkt.ch/super-league/spieltagtabelle/wettbewerb/C1?saison_id=2024")
 webpage <- read_html(url)
 
 data_tabelle <- html_text(html_nodes(webpage,"td"))
@@ -38,6 +38,7 @@ tabelle$team[which(grepl("Winterthur",tabelle$team))] <- "FC Winterthur"
 tabelle$team[which(grepl("Stade-Lausanne",tabelle$team))] <- "FC Stade-Lausanne-Ouchy"
 tabelle$team[which(grepl("Yverdon",tabelle$team))] <- "Yverdon Sport FC"
 tabelle$team[which(grepl("Lausanne[-]Sport",tabelle$team))] <- "FC Lausanne-Sport"
+tabelle$team[which(grepl("FC Sion",tabelle$team))] <- "FC Sion"
 
 round <- max(tabelle$matches)
 print(paste0("Played rounds: ",round))
@@ -85,5 +86,4 @@ tabelle_old$team[which(grepl("Winterthur",tabelle_old$team))] <- "FC Winterthur"
 tabelle_old$team[which(grepl("Stade-Lausanne",tabelle_old$team))] <- "FC Stade-Lausanne-Ouchy"
 tabelle_old$team[which(grepl("Yverdon",tabelle_old$team))] <- "Yverdon Sport FC"
 tabelle_old$team[which(grepl("Lausanne[-]Sport",tabelle_old$team))] <- "FC Lausanne-Sport"
-
-print(tabelle_old)
+tabelle_old$team[which(grepl("FC Sion",tabelle_old$team))] <- "FC Sion"
