@@ -94,10 +94,10 @@ if (length(position_missing_matches)>0) {
   scores_new$score <- scores_new$x.x + scores_new$x.y
 
   #Merge to final score by adding scores so far
-  #scores_overall <- merge(scores_new,scores_season,by="Group.1")
-  #scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
-  scores_overall <- scores_new
-  scores_overall$final_score <- scores_new$score
+  scores_overall <- merge(scores_new,scores_season,by="Group.1")
+  scores_overall$final_score <- scores_overall$score.x + scores_overall$score.y
+  #scores_overall <- scores_new
+  #scores_overall$final_score <- scores_new$score
   
   #Write final score in new data frame
   season_prognosis <- rbind(season_prognosis,scores_overall$final_score)
@@ -154,7 +154,7 @@ new_entry_prediction$date <- Sys.Date()
 #Load Data from the past
 old_data_predictions <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/trend_predictions.csv",encoding = "UTF-8")
 colnames(old_data_predictions)[3] <- "FC_Lausanne-Sport"
-colnames(old_data_predictions)[7] <- "FC_Stade-Lausanne-Ouchy"
+colnames(old_data_predictions)[7] <- "FC_St._Gallen_1879"
 old_data_predictions$date <- as.Date(old_data_predictions$date)
 
 #Add Data

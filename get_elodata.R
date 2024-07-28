@@ -1,7 +1,7 @@
 get_elodata <- function() {
 
 
-teams <- c("YoungBoys","Basel","StGallen","Servette","Luzern","Zuerich","Lugano","Lausanne","Winterthur","Grasshoppers","YverdonSport","LausanneOuchy","Sion")
+teams <- c("YoungBoys","Basel","StGallen","Servette","Luzern","Zuerich","Lugano","Lausanne","Winterthur","Grasshoppers","YverdonSport","Sion")
 
 elo_values <- data.frame("None","bla","SUI",0,0,Sys.Date(),Sys.Date())
 colnames(elo_values) <- c("Rank","Club","Country","Level","Elo","From","To")
