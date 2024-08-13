@@ -40,8 +40,9 @@ tabelle$team[which(grepl("Yverdon",tabelle$team))] <- "Yverdon Sport FC"
 tabelle$team[which(grepl("Lausanne[-]Sport",tabelle$team))] <- "FC Lausanne-Sport"
 tabelle$team[which(grepl("FC Sion",tabelle$team))] <- "FC Sion"
 
-round <- max(tabelle$matches)
+round <- as.numeric(names(sort(table(tabelle$matches), decreasing=TRUE)[1]))
 print(paste0("Played rounds: ",round))
+
 
 #tabelle <- tabelle %>%
 #  add_row(team = "FC Sion")
