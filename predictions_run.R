@@ -1,13 +1,13 @@
 #Set working directory
 #setwd("C:/Users/Administrator/Desktop/predictions")
-setwd("C:/Users/sw/OneDrive/Fussballdaten/Super_League_Predictions")
+setwd("C:/Users/simon/OneDrive/Fussballdaten/Super_League_Predictions")
 
 #Load library
 source("config.R")
 
 #Season
 season <- "24/25"
-View(data_transfermarkt_new)
+
 #Get Elo-Daten
 source("get_elodata.R", encoding = "UTF-8")
 
@@ -26,11 +26,10 @@ source("getting_ids.R", encoding = "UTF-8")
 rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
 #Adaptions
-#games <- c(4362929,4362930,4362931)
+#games <- c(4362928)
 #round <- 5
-#new_matches <- new_matches[-1]
-missing_matches <- c(4362928,4362932)
-position_missing_matches <- c(29,30)
+missing_matches <- c(4362932)
+position_missing_matches <- c(30)
 new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
 
 #Scrape recently played matches
