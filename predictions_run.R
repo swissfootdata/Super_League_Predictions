@@ -26,11 +26,11 @@ source("getting_ids.R", encoding = "UTF-8")
 rounds_played <- as.numeric(read.delim("rounds_played.txt", header=FALSE))
 
 #Adaptions
-#games <- c(4362928)
+#games <- c(4362932)
 #round <- 5
-missing_matches <- c(4362932)
-position_missing_matches <- c(30)
-new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
+missing_matches <- c()
+position_missing_matches <- c()
+#new_matches[(length(new_matches)+1):(length(new_matches)+length(missing_matches))] <- missing_matches
 
 #Scrape recently played matches
 source("get_new_data.R", encoding = "UTF-8")
