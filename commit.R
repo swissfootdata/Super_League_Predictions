@@ -49,7 +49,7 @@ gitpull <- function(dir = getwd()){
 
 #Make Commit
 #token <- read.csv("C:/Users/Administrator/Desktop/Github_Token/token.txt",header=FALSE)[1,1]
-token <- read.csv("C:/Users/simon/OneDrive/Fussballdaten/Github_Token/token.txt",header=FALSE)[1,1]
+token <- read.csv("C:/Users/sw/OneDrive/Fussballdaten/Github_Token/token.txt",header=FALSE)[1,1]
 
 git2r::config(user.name = "swissfootdata",user.email = "swissfootballdata@bluewin.ch")
 invisible(git2r::cred_token(token))
