@@ -204,3 +204,8 @@ table_rankings <- table_rankings %>%
     mutate(odds_top_6 = `1st`+`2nd`+`3rd`+`4th`+`5th`+`6th`)
 
 View(table_rankings)
+
+#Title prediction
+write.csv(table_rankings[1:2],file="Output/title_predictions.csv", row.names=FALSE, fileEncoding = "UTF-8")
+
+
