@@ -76,3 +76,10 @@ dw_publish_chart("qPB42")
 
 dw_edit_chart("VF9j6",intro=paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
 dw_publish_chart("VF9j6")
+
+dw_edit_chart("jUvn1",intro=paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
+dw_publish_chart("jUvn1")
+
+dw_edit_chart("bOLPW",intro=paste0("last update: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
+dw_publish_chart("bOLPW")
+
