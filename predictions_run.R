@@ -73,4 +73,3 @@ source("commit.R", encoding = "UTF-8")
 # upcoming_matches$elo_away[108] <- upcoming_matches$elo_away[16]
 # upcoming_matches$mv_average_away[108] <-upcoming_matches$mv_average_away[16]
 # upcoming_matches$round[108] <- 5
-
