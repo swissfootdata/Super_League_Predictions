@@ -206,6 +206,7 @@ table_rankings <- table_rankings %>%
 View(table_rankings)
 
 #Title prediction
+table_rankings$Team <- paste0("<b>",table_rankings$Team,"</b>")
 write.csv(table_rankings[1:2],file="Output/title_predictions.csv", row.names=FALSE, fileEncoding = "UTF-8")
 
 
