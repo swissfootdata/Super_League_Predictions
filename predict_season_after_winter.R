@@ -14,7 +14,7 @@ scores_season$score <- scores_season$x.x + scores_season$x.y
 
 ###Create Data Frame to collect all iterations
 season_prognosis <- data.frame(0,0,0,0,0,0,0,0,0,0,0,0)
-colnames(season_prognosis) <- c("BSC Young Boys","FC Basel 1893","FC Lausanne-Sport","FC Lugano","FC Luzern","FC St. Gallen 1879","FC Stade-Lausanne-Ouchy","FC Winterthur","FC Zürich","Grasshopper Club Zürich","Servette FC","Yverdon Sport FC")
+colnames(season_prognosis) <- c("BSC Young Boys","FC Basel 1893","FC Lausanne-Sport","FC Lugano","FC Luzern","FC Sion","FC St. Gallen 1879","FC Winterthur","FC Zürich","Grasshopper Club Zürich","Servette FC","Yverdon Sport FC")
 
 #Remove rankings
 X_season <- X[,-c(1:2)]
@@ -141,7 +141,7 @@ new_entry_prediction$date <- Sys.Date()
 #Load Data from the past
 old_data_predictions <- read.csv("https://raw.githubusercontent.com/swissfootdata/Super_League_Predictions/master/Output/trend_predictions.csv",encoding = "UTF-8")
 colnames(old_data_predictions)[3] <- "FC_Lausanne-Sport"
-colnames(old_data_predictions)[7] <- "FC_Stade-Lausanne-Ouchy"
+colnames(old_data_predictions)[7] <- "FC_St._Gallen_1879"
 old_data_predictions$date <- as.Date(old_data_predictions$date)
 
 #Add Data
@@ -191,3 +191,8 @@ table_rankings <- table_rankings %>%
     mutate(odds_top_6 = `1st`+`2nd`+`3rd`+`4th`+`5th`+`6th`)
 
 View(table_rankings)
+
+
+#Title prediction
+table_rankings$Team <- paste0("<b>",table_rankings$Team,"</b>")
+write.csv(table_rankings[1:2],file="Output/title_predictions.csv", row.names=FALSE, fileEncoding = "UTF-8")
