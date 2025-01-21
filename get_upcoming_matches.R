@@ -23,7 +23,7 @@ for (i in new_matches_all) {
   
   url <- paste0("https://www.transfermarkt.ch/fc-sion_fc-basel-1893/statistik/spielbericht/",i)
   webpage <- read_html(url)
-  
+ 
   team_home <- html_text(html_nodes(webpage,".sb-vereinslink"))[1]
   team_away <- html_text(html_nodes(webpage,".sb-vereinslink"))[2]
   #team_home <- gsub("FC Lausanne-Sport","FC Winterthur",team_home)
