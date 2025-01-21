@@ -107,7 +107,7 @@ for (i in games) {
 
 
 data_transfermarkt_new <- data_transfermarkt_new[-1,]
-data_transfermarkt_new$date <- as.Date(data_transfermarkt_new$date,format="%d.%m.%y")
+data_transfermarkt_new$date <- as.Date(data_transfermarkt_new$date,format="%d.%m.%Y")
 data_transfermarkt_new$goals_home <- NA
 data_transfermarkt_new$goals_away <- NA
 data_transfermarkt_new$points_home <- NA
@@ -153,6 +153,8 @@ data_transfermarkt_new <- merge(data_transfermarkt_new,market_values_home)
 market_values_away <- market_values
 colnames(market_values_away) <- c("season","team_away","mv_overall_away","mv_average_away","mv_ranking_away")
 data_transfermarkt_new <- merge(data_transfermarkt_new,market_values_away)
+
+
 
 
 #ELO-Werte hinzufügen
@@ -441,4 +443,3 @@ rs <- dbSendQuery(mydb, sql_qry)
 dbDisconnectAll()
 
 print("New data written in Database")
-
