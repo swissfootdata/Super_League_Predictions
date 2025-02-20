@@ -43,6 +43,10 @@ for (i in games) {
   datum <- gsub("[.]22",".2022",datum)
   datum <- gsub("[.]23",".2023",datum)
   datum <- gsub("[.]24",".2024",datum)
+  datum <- gsub("[.]25",".2025",datum)
+  datum <- gsub("[.]26",".2026",datum)
+  datum <- gsub("[.]27",".2027",datum)
+  datum <- gsub("[.]28",".2028",datum)
   zeit <- gsub( ".*(\\d{2}:\\d{2}).*", "\\1", html_text(html_nodes(webpage,".sb-datum"))[1]) #2
   
   
@@ -153,9 +157,6 @@ data_transfermarkt_new <- merge(data_transfermarkt_new,market_values_home)
 market_values_away <- market_values
 colnames(market_values_away) <- c("season","team_away","mv_overall_away","mv_average_away","mv_ranking_away")
 data_transfermarkt_new <- merge(data_transfermarkt_new,market_values_away)
-
-
-
 
 #ELO-Werte hinzufügen
 data_transfermarkt_new$elo_home <- NA
